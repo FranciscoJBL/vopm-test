@@ -1,6 +1,6 @@
 <?php
 
-namespace AndainTest\Providers;
+namespace VOPMTest\Providers;
 
 /**
  * Queue provider.
@@ -10,7 +10,7 @@ class Queue {
      * Get queue task.
      */
     public function getQueueTask() : array {
-        $task = \AndainTest\Providers\Database::query(
+        $task = \VOPMTest\Providers\Database::query(
             "SELECT * FROM system_queue where status = 'pending' order by run_date asc limit 1"
         );
 
@@ -26,7 +26,7 @@ class Queue {
      * Set task processing.
      */
     public function setProcessing($task) {
-        \AndainTest\Providers\Database::query(
+        \VOPMTest\Providers\Database::query(
             "UPDATE system_queue SET status = 'in-process' WHERE id = '" . $task['id'] . "'"
         );
     }
@@ -35,7 +35,7 @@ class Queue {
      * Set task completed.
      */
     public function setCompleted($task) {
-        \AndainTest\Providers\Database::query(
+        \VOPMTest\Providers\Database::query(
             "UPDATE system_queue SET status = 'completed' WHERE id = '" . $task[0]['id'] . "'"
         );
     }

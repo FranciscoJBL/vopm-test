@@ -1,6 +1,6 @@
 <?php
 
-namespace AndainTest\Providers;
+namespace VOPMTest\Providers;
 
 /**
  * Database provider.

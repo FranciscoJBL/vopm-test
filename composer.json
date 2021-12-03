@@ -1,11 +1,11 @@
 {
-    "name": "francisco/andain-test",
+    "name": "francisco/vopm-test",
     "description": "A test for become a raid boss",
     "type": "project",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "AndainTest\\": "src/"
+            "VOPMTest\\": "src/"
         }
     },
     "authors": [

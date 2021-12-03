@@ -1,6 +1,6 @@
 <?php
 
-namespace AndainTest;
+namespace VOPMTest;
 
 /**
  * First Andain test
@@ -37,7 +37,7 @@ class TestOne {
      */
     private function getUsers() : array {
         if ($this->users === null) {
-            $userProvider = new \AndainTest\Providers\User();
+            $userProvider = new \VOPMTest\Providers\User();
             $this->users = $userProvider->getAll();
         }
         return $this->users;

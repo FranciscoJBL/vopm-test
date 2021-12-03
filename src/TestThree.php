@@ -1,6 +1,6 @@
 <?php
 
-namespace AndainTest;
+namespace VOPMTest;
 
 /**
  * Third Andain test

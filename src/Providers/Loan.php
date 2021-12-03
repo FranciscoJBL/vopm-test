@@ -1,6 +1,6 @@
 <?php
 
-namespace AndainTest\Providers;
+namespace VOPMTest\Providers;
 
 /**
  * Application provider.
@@ -11,7 +11,7 @@ class Application {
      */
     public function getAll(): array {
         return $this->queryUsers(
-            \AndainTest\Providers\Database::getConnection()
+            \VOPMTest\Providers\Database::getConnection()
         );
     }
 
@@ -19,7 +19,7 @@ class Application {
      * Query user data.
      */
     private function queryApplications(\mysqli $db) : array {
-        return \AndainTest\Providers\Database::query(
+        return \VOPMTest\Providers\Database::query(
             "SELECT * from application"
         );
     }
@@ -52,7 +52,7 @@ class Application {
      * Fetch creator from a given application
      */
     public function fetchCreatorDealer(array $application) : int {
-        $data = \AndainTest\Providers\Database::query(
+        $data = \VOPMTest\Providers\Database::query(
             "SELECT setting from application_history where application_id = "
             . $application['id']
             . "order by add_date asc limit 1"
@@ -65,7 +65,7 @@ class Application {
      * Fetch Closer dealer from a given application
      */
     public function fetchCloserDealer(array $application) : int {
-        $data = \AndainTest\Providers\Database::query(
+        $data = \VOPMTest\Providers\Database::query(
             "SELECT setting from application_history where application_id = "
             . $application['id']
             . "order by add_date desc limit 1"
@@ -78,7 +78,7 @@ class Application {
      * Get application creation time.
      */
     public function getApplicationCreationTime($application) : int {
-        return \AndainTest\Providers\Database::query(
+        return \VOPMTest\Providers\Database::query(
             "SELECT add_date from application_history where application_id = "
             . $application['id']
             . "order by add_date asc limit 1"
